@@ -98,7 +98,6 @@ String httpClient::serialiseRequestData(int temp, int hum, const char* sensorNam
     doc["hum"] = hum;
     doc["sensorId"] = sensorName;
     serializeJson(doc, theJSON);
-
     return theJSON;
 }
 

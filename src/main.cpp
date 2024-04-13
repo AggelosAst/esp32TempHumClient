@@ -4,8 +4,8 @@
 #include <ArduinoJson.h>
 #include <dht.h>
 
-const char *ssid = "VODAFONE_H268Q-6419";
-const char *password = "b4H4XXu3e9d2SyfS";
+const char *ssid = "ssid";
+const char *password = "password";
 
 namespace programEnums {
     enum class options {
@@ -164,8 +164,6 @@ void indicatorHandlers::ledIndicate::blinkLed(programEnums::options mode) {
                 delay(1000);
                 digitalWrite(pinManager::ledIndicatorPin, LOW);
             }
-
-            
             break;
         case programEnums::options::NORMAL:
             delay(1000);
@@ -323,7 +321,7 @@ void loop() {
     int humidity = dht.readHumidity();
 
     const char *deviceName = "ESP32";
-    const char *url = "https://voidtools.lol/api/v1/data";
+    const char *url = "https://meow.lol/api/v1/data";
 
     if (humidity > 100) {
         Messages::Warnings::humWarning = "Normal";
